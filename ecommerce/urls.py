@@ -16,12 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from tracking_system.views import home,track
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("ts/",home),
-    path("track/",track),
+    path('tracking/', include('tracking_system.urls')),
     path("",include('mart.urls'))
 
 ]
